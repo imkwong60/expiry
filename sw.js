@@ -1,4 +1,4 @@
-const CACHE_NAME = 'expiry-tracker-v1';
+const CACHE_NAME = 'expiry-tracker-v2';
 const APP_SHELL = ['./', './index.html', './manifest.json', './icon.svg'];
 
 self.addEventListener('install', event => {
@@ -52,7 +52,7 @@ self.addEventListener('push', event => {
 
 self.addEventListener('notificationclick', event => {
   event.notification.close();
-  const targetUrl = new URL((event.notification.data && event.notification.data.url) || './', self.location.origin).href;
+  const targetUrl = new URL((event.notification.data && event.notification.data.url) || './', self.registration.scope).href;
   event.waitUntil((async () => {
     const windows = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
     for (const client of windows) {
