@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "Expiry Tracker｜庫存與賞味期限",
+  "short_name": "Expiry Tracker",
+  "description": "個人庫存與賞味期限追蹤器",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f766e",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
