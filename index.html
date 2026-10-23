@@ -8,7 +8,7 @@
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="./icon-180.png">
-  <title>Expiry Tracker｜庫存與賞味期限</title>
+  <title>Expiry Tracker｜過期本本</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
@@ -26,8 +26,8 @@
     <div class="max-w-3xl mx-auto px-4 py-5 flex items-center justify-between gap-3">
       <div>
         <p class="text-xs tracking-widest text-teal-100">PERSONAL INVENTORY</p>
-        <h1 class="text-2xl font-bold">Expiry Tracker</h1>
-        <p class="text-sm text-teal-100 mt-1">庫存與賞味期限追蹤器</p>
+        <h1 class="text-2xl font-bold">Expiry Tracker 過期本本</h1>
+        <p class="text-sm text-teal-100 mt-1">期限追蹤器</p>
       </div>
       <svg aria-hidden="true" width="54" height="54" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="39" height="44" rx="8" fill="#fff"/><rect x="8" y="12" width="39" height="13" rx="6" fill="#99f6e4"/><path d="M19 8v10M36 8v10" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="m17 35 5 5 10-11" stroke="#0f766e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46" cy="44" r="13" fill="#fbbf24" stroke="#0f766e" stroke-width="3"/><path d="M46 37v8l5 3" stroke="#78350f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
@@ -49,7 +49,7 @@
         <input id="itemId" type="hidden">
         <div>
           <label for="itemName" class="block text-sm font-medium mb-1">物品名稱 *</label>
-          <input id="itemName" class="field" maxlength="120" required placeholder="例如：牛奶、維他命、罐頭">
+          <input id="itemName" class="field" maxlength="120" required placeholder="例如：牛奶、Netflix、恆生信用卡">
         </div>
         <div class="grid grid-cols-2 gap-3">
           <div>
@@ -57,7 +57,7 @@
             <input id="itemQuantity" class="field" type="number" min="0" step="any" value="1" required>
           </div>
           <div>
-            <label for="itemExpiry" class="block text-sm font-medium mb-1">賞味期限／到期日 *</label>
+            <label for="itemExpiry" class="block text-sm font-medium mb-1">到期日 *</label>
             <input id="itemExpiry" class="field" type="date" required>
           </div>
         </div>
@@ -65,7 +65,7 @@
           <label for="itemNote" class="block text-sm font-medium mb-1">備註</label>
           <textarea id="itemNote" class="field" rows="2" maxlength="1000" placeholder="例如：放在雪櫃下層"></textarea>
         </div>
-        <button id="saveBtn" class="btn btn-primary w-full" type="submit">新增物品</button>
+        <button id="saveBtn" class="btn btn-primary w-full" type="submit">新增項目</button>
       </form>
       <p class="text-xs text-slate-500 mt-3">資料會按登入帳戶儲存在 Supabase；請勿把資料庫設成公開可讀寫。</p>
     </section>
@@ -77,7 +77,7 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-2">
         <input id="searchInput" class="field" placeholder="搜尋物品名稱或備註">
-        <select id="filterSelect" class="field sm:w-44" aria-label="篩選庫存">
+        <select id="filterSelect" class="field sm:w-44" aria-label="篩選">
           <option value="all">全部物品</option>
           <option value="soon">14 日內到期</option>
           <option value="expired">已到期</option>
